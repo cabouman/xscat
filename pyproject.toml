@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xscat"
+description = "X-ray CT scatter correction"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.11"
+dynamic = ["version"]
+authors = [
+    { name = "XScat development team" },
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "torch",
+    "mbirtorch",
+    "h5py",
+    "pyyaml",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+docs = ["sphinx", "sphinx_book_theme", "sphinx-copybutton", "sphinxext-opengraph"]
+
+[project.urls]
+Homepage = "https://github.com/cabouman/xscat"
+Documentation = "https://xscat.readthedocs.io"
+
+[tool.setuptools]
+packages = ["xscat"]
+
+[tool.setuptools.dynamic]
+version = { attr = "xscat.__version__" }

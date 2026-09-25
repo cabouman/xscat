@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "xscat: X-ray CT scatter correction"
+type: software
+authors:
+  - family-names: Lin
+    given-names: Jingsong
+  - family-names: Rahman
+    given-names: Obaidullah
+  - family-names: Ziabari
+    given-names: Amirkoushyar
+  - family-names: Buzzard
+    given-names: Gregery T.
+  - family-names: Bouman
+    given-names: Charles A.
+version: 0.0.1
+date-released: 2026-09-25
+url: "https://xscat.readthedocs.io"
+repository-code: "https://github.com/cabouman/xscat"
+license: BSD-3-Clause
