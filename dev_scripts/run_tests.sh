@@ -1,12 +1,12 @@
 #!/bin/bash
-# Run the test suite.  Works from any directory.
-
+# Run the test suite in the environment.
 set -eo pipefail
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+source "$SCRIPT_DIR/config.sh"
+source "$(conda info --base)/etc/profile.d/conda.sh"
 
-echo "Running pytest on all tests."
-# Use `python -m pytest`, not bare `pytest`, so the pytest from the
-# active environment is used rather than one earlier on PATH.
+conda activate "$NAME"
+# Use `python -m pytest` so the active environment's pytest is used, not one
+# earlier on PATH.
 python -m pytest -ra "$REPO_ROOT/tests"
