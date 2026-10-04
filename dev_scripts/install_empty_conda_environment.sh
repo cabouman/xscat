@@ -10,7 +10,7 @@ source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate base
 
 # Package-specific setup before the env is created, if config.sh defines it.
-declare -f before_env_create >/dev/null && before_env_create
+if declare -f before_env_create >/dev/null; then before_env_create; fi
 
 # Remove the env, and any leftover directory a failed run may have left behind.
 conda env remove -y -n "$NAME" 2>/dev/null || true

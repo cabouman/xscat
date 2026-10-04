@@ -11,4 +11,4 @@ rm -rf "$REPO_ROOT/docs/build" "$REPO_ROOT/dist" \
 pip uninstall -y "$NAME" 2>/dev/null || true
 
 # Package-specific cleanup, if config.sh defines it.
-declare -f extra_clean >/dev/null && extra_clean
+if declare -f extra_clean >/dev/null; then extra_clean; fi
