@@ -15,10 +15,18 @@ Full documentation: [xscat.readthedocs.io](https://xscat.readthedocs.io).
 ```bash
 git clone git@github.com:cabouman/xscat.git
 cd xscat
-pip install .
+bash dev_scripts/clean_install_all.sh
+conda activate xscat
 ```
 
-This installs mbirtorch and the other dependencies automatically.
+This creates the `xscat` conda environment, builds
+[LEAP](https://github.com/LLNL/LEAP) and
+[XrayPhysics](https://github.com/kylechampley/XrayPhysics) from source, and
+installs xscat with mbirtorch and its other dependencies.  It needs conda,
+git, make and a C/C++ compiler; running the scatter correction needs Linux and
+an NVIDIA GPU.  See the
+[installation page](https://xscat.readthedocs.io/en/latest/install.html) for
+details.
 
 ## Citation
 

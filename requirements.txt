@@ -1,5 +1,7 @@
 numpy
 scipy
+scikit-image
+tifffile
 torch
 h5py
 pyyaml
